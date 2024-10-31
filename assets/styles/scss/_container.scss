@@ -1,0 +1,59 @@
+// ==================================================================
+// Container
+// ==================================================================
+##{$prefix}plugin-container {
+  box-sizing   : border-box;
+  margin-top   : 40px;
+  padding-right: 20px;
+  @media screen and (max-width: 782px) {
+    margin-top   : 20px;
+    padding-right: 10px;
+  }
+}
+.#{$prefix}container {
+  width    : 640px;
+  margin   : 0 auto;
+  max-width: 100%;
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+  a {
+    color          : $primary;
+    text-decoration: none;
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.#{$prefix}header {
+  text-align   : center;
+  margin-bottom: 40px;
+}
+.#{$prefix}body {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: 0;
+  }
+}
+// ==================================================================
+// Block
+// ==================================================================
+.#{$prefix}block {
+  background: #fff;
+  color     : #111;
+  padding   : 20px 15px;
+  border    : 6px;
+  box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #e9eff3;
+  width     : 400px;
+  max-width : 100%;
+  margin    : 0 auto;
+}
+.#{$prefix}logout-block {
+  text-align: center;
+}

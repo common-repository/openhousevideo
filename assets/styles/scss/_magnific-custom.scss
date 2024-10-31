@@ -1,0 +1,39 @@
+body.ohv-mfp-shown {
+  .mfp-bg {
+    z-index: 101000 !important;
+  }
+  .mfp-wrap {
+    z-index: 101001 !important;
+  }
+  .mfp-preloader {
+    z-index: 101002 !important;
+  }
+  .mfp-content {
+    z-index: 101003 !important;
+  }
+}
+// mfp-fade
+.mfp-fade {
+  &.mfp-bg {
+    opacity   : 0;
+    transition: all 0.15s ease-out;
+    &.mfp-ready {
+      opacity: 0.8;
+    }
+    &.mfp-removing {
+      opacity: 0;
+    }
+  }
+  &.mfp-wrap {
+    .mfp-content {
+      opacity   : 0;
+      transition: all 0.15s ease-out;
+    }
+    &.mfp-ready .mfp-content {
+      opacity: 1;
+    }
+    &.mfp-removing .mfp-content {
+      opacity: 0;
+    }
+  }
+}

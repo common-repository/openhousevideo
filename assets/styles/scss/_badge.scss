@@ -1,0 +1,41 @@
+// ==================================================================
+// Badge
+// ==================================================================
+.#{$prefix}badge {
+  display         : inline-block;
+  font-size       : 11px;
+  padding         : 3px 6px;
+  background-color: #eee;
+  border-color    : #eee;
+  border-radius   : 4px;
+  &-success {
+    background-color: $success;
+    border-color    : $success;
+    color           : #fff;
+  }
+  &-danger {
+    background-color: $danger;
+    border-color    : $danger;
+    color           : #fff;
+  }
+  &-agent {
+    background-color: $agent;
+    border-color    : $agent;
+    color           : #fff;
+  }
+  &-broker {
+    background-color: $broker;
+    border-color    : $broker;
+    color           : #fff;
+  }
+  &-manager {
+    background-color: $manager;
+    border-color    : $manager;
+    color           : #fff;
+  }
+  &-lender {
+    background-color: $lender;
+    border-color    : $lender;
+    color           : #fff;
+  }
+}

@@ -1,0 +1,49 @@
+// ==================================================================
+// Alert
+// ==================================================================
+.#{$prefix}alert {
+  padding         : 6px 12px;
+  background-color: #eee;
+  border-color    : #eee;
+  border-radius   : 4px;
+  margin-bottom   : 10px;
+  &-success {
+    background-color: $success;
+    border-color    : $success;
+    color           : #fff;
+    span > a {
+      color          : #fff;
+      text-decoration: underline;
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &-danger {
+    background-color: $danger;
+    border-color    : $danger;
+    color           : #fff;
+    span > a {
+      color          : #fff;
+      text-decoration: underline;
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &-warning {
+    background-color: $warning;
+    border-color    : $warning;
+    color           : #fff;
+    span > a {
+      color          : #fff;
+      text-decoration: underline;
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

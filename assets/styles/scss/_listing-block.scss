@@ -1,0 +1,304 @@
+// ==================================================================
+// Listing Block
+// ==================================================================
+##{$prefix}listing-block {
+  // min-height    : 100px;
+  text-align    : left;
+  vertical-align: top;
+  margin-bottom : 20px;
+  @media screen and (max-width: 782px) {
+    text-align: center;
+  }
+  .#{$prefix}lt-item {
+    $width        : 250px;
+    $height       : 155px;
+    background    : #fff;
+    border        : 2px solid $default;
+    border-radius : 4px;
+    box-shadow    : 0 0 0 1px rgba(#000, .1);
+    display       : inline-block;
+    overflow      : hidden;
+    position      : relative;
+    text-align    : left;
+    width         : $width;
+    max-width     : 100%;
+    margin        : 0 7.5px 15px;
+    vertical-align: top;
+    z-index       : 1;
+    transition    : all ease 0.3s;
+    @media screen and (max-width: 782px) {
+      margin   : 0 auto 15px;
+      max-width: 90%;
+    }
+    &:focus,
+    &:hover {
+      border-color: darken($default, 10%);
+      box-shadow  : 0 0 2px 3px rgba(#000, .1);
+    }
+    &.ohv-selected {
+      border-color: $primary;
+      box-shadow  : 0 0 2px 3px rgba($primary, .1);
+      .#{$prefix}lt-body {
+        > span {
+          background-color: rgba($primary, .8);
+          .ohv-lt-click-text-selected {
+            display: inline-block;
+          }
+          .ohv-lt-click-text {
+            display: none;
+          }
+        }
+      }
+    }
+    .#{$prefix}lt-header {}
+    .#{$prefix}lt-body {
+      height         : $height;
+      background-size: cover;
+      position       : relative;
+      @media screen and (max-width: 782px) {
+        height: $height - 50;
+      }
+      > span {
+        $width          : 180px;
+        $height         : 50px;
+        background-color: rgba(#000, .4);
+        border          : 2px solid #fff;
+        border-radius   : 4px;
+        color           : #fff;
+        cursor          : pointer;
+        font-weight     : bold;
+        position        : absolute;
+        left            : 50%;
+        top             : 50%;
+        width           : $width;
+        height          : $height;
+        margin-left     : -#{$width / 2};
+        margin-top      : -#{$height / 2};
+        line-height     : $height;
+        text-transform  : uppercase;
+        text-align      : center;
+        transition      : all ease 0.3s;
+        .ohv-lt-click-text-selected {
+          display: none;
+        }
+      }
+    }
+    .#{$prefix}lt-footer {
+      border-top: 1px solid $default;
+      padding   : 10px 15px;
+      p.ohv-lt-addr {
+        margin: 0;
+        span {
+          vertical-align: bottom;
+        }
+        span.ohv-lt-addr-street {
+          display       : block;
+          overflow      : hidden;
+          text-overflow : ellipsis;
+          white-space   : nowrap;
+          text-transform: capitalize;
+          max-width     : 100%;
+        }
+        span.ohv-lt-addr-city {
+          letter-spacing: -0.1px;
+          color         : #d6d6d6;
+        }
+        span.ohv-lt-addr-state {
+          letter-spacing: -0.1px;
+          color         : #d6d6d6;
+        }
+        span.ohv-lt-addr-postal {
+          letter-spacing: -0.1px;
+          color         : #d6d6d6;
+        }
+      }
+    }
+  }
+  .#{$prefix}listing-empty {
+    display: none;
+    .#{$prefix}listing-empty-p {
+      font-size : 16px;
+      color     : #333;
+      font-style: italic;
+      text-align: center;
+    }
+  }
+  &.#{$prefix}is-empty {
+    .#{$prefix}listing-empty {
+      display: block !important;
+    }
+  }
+}
+##{$prefix}listing-preview {
+  display      : none;
+  margin-bottom: 20px;
+  .#{$prefix}listing-preview-content {
+    text-align: center;
+    .#{$prefix}iframe {
+      margin: 0;
+    }
+  }
+}
+##{$prefix}breadcrumbs {
+  display: none;
+}
+.#{$prefix}show-preview {
+  ##{$prefix}listing-block,
+  ##{$prefix}listing-toolbar {
+    display: none;
+  }
+  ##{$prefix}breadcrumbs,
+  ##{$prefix}listing-preview {
+    display: block;
+  }
+}
+##{$prefix}listing-toolbar {
+  background              : #fcf8f5;
+  border                  : solid 1px #d8d8d8;
+  border-width            : 1px 0;
+  margin                  : 0 0 20px;
+  padding                 : 5px 0;
+  $filter-width           : 500px;
+  .#{$prefix}listing-filter {
+    float  : left;
+    width  : $filter-width;
+    padding: 0 15px;
+    @media screen and (max-width: 960px) {
+      float: none;
+      clear: both;
+      width: auto;
+    }
+  }
+  $search-with-order-width: $popup-width - $filter-width - 40;
+  .#{$prefix}listing-search-with-order {
+    float       : right;
+    width       : #{$search-with-order-width};
+    padding     : 0 15px;
+    @media screen and (max-width: 960px) {
+      margin: 0 0 15px;
+    }
+    @media screen and (max-width: 782px) {
+      float: none;
+      width: auto;
+    }
+    $order-width: 120px;
+    .#{$prefix}listing-order {
+      float       : right;
+      width       : $order-width;
+      padding-left: 15px;
+      @media screen and (max-width: 782px) {
+        width: percentage(2/5);
+      }
+    }
+    .#{$prefix}listing-search {
+      float  : left;
+      width  : #{$search-with-order-width - $order-width - 30};
+      padding: 0;
+      @media screen and (max-width: 782px) {
+        width: percentage(3/5);
+      }
+      .#{$prefix}form-control {
+        height     : 28px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+##{$prefix}listing-filter {
+  .#{$prefix}ul-lt-status-wrapper {
+    background   : #fcf8f5;
+    border       : solid 1px #d8d8d8;
+    border-width : 1px 0;
+    margin-bottom: 20px;
+    padding      : 5px 0;
+    @media screen and (max-width: 960px) {
+      margin: 0 auto;
+    }
+  }
+  .#{$prefix}ul-lt-status {
+    border    : 0;
+    list-style: none;
+    margin    : 0;
+    max-width : 400px;
+    @media screen and (max-width: 960px) {
+      max-width: 100%;
+    }
+    > li {
+      display   : block;
+      float     : left;
+      margin    : 0;
+      padding   : 0;
+      text-align: center;
+      width     : 25%;
+      @media screen and (max-width: 782px) {
+        width: 50%;
+      }
+      .#{$prefix}active {
+        &.#{$prefix}btn-active {
+          background-color: $status-active;
+          border-color    : $status-active;
+          color           : #fff;
+        }
+        &.#{$prefix}btn-inactive {
+          background-color: $status-inactive;
+          border-color    : $status-inactive;
+          color           : #fff;
+        }
+        &.#{$prefix}btn-pending {
+          background-color: $status-pending;
+          border-color    : $status-pending;
+          color           : #fff;
+        }
+        &.#{$prefix}btn-sold {
+          background-color: $status-sold;
+          border-color    : $status-sold;
+          color           : #fff;
+        }
+      }
+      .#{$prefix}btn {
+        border       : 1px solid transparent;
+        border-radius: 25px;
+        color        : #111;
+        display      : block;
+        @media screen and (max-width: 782px) {
+          border-radius: 0;
+          border-color : $default;
+        }
+        > input[type=checkbox],
+        > input[type=radio] {
+          position      : absolute;
+          clip          : rect(0,0,0,0);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+.#{$prefix}filter-active {
+  .#{$prefix}lt-item-inactive,
+  .#{$prefix}lt-item-pending,
+  .#{$prefix}lt-item-sold {
+    display: none !important;
+  }
+}
+.#{$prefix}filter-inactive {
+  .#{$prefix}lt-item-active,
+  .#{$prefix}lt-item-pending,
+  .#{$prefix}lt-item-sold {
+    display: none !important;
+  }
+}
+.#{$prefix}filter-pending {
+  .#{$prefix}lt-item-active,
+  .#{$prefix}lt-item-inactive,
+  .#{$prefix}lt-item-sold {
+    display: none !important;
+  }
+}
+.#{$prefix}filter-sold {
+  .#{$prefix}lt-item-active,
+  .#{$prefix}lt-item-inactive,
+  .#{$prefix}lt-item-pending {
+    display: none !important;
+  }
+}

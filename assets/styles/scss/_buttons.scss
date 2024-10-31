@@ -1,0 +1,36 @@
+// ==================================================================
+// Buttons
+// ==================================================================
+.#{$prefix}btn {
+  padding       : 6px 12px;
+  border-radius : 4px;
+  cursor        : pointer;
+  text-align    : center;
+  text-transform: uppercase;
+  transition    : all ease 0.3s;
+  min-width     : 70px;
+  &:focus,
+  &:hover {
+    transition: all ease 0.1s;
+  }
+  &-default {
+    background-color: $default;
+    border-color    : $default;
+    color           : #333;
+    &:focus,
+    &:hover {
+      background-color: darken($default, 5%);
+      border-color    : darken($default, 5%);
+    }
+  }
+  &-primary {
+    background-color: $primary;
+    border-color    : $primary;
+    color           : #fff;
+    &:focus,
+    &:hover {
+      background-color: darken($primary, 5%);
+      border-color    : darken($primary, 5%);
+    }
+  }
+}

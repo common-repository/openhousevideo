@@ -1,0 +1,24 @@
+// ==================================================================
+// Breadcrumbs
+// ==================================================================
+.#{$prefix}breadcrumbs {
+  background   : #fcf8f5;
+  border       : solid 1px #d8d8d8;
+  border-width : 1px 0;
+  margin-bottom: 20px;
+  padding      : 5px 0;
+  a {
+    color          : #333;
+    text-decoration: none;
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  span {
+    color: #999;
+  }
+  i.fa {
+    margin: 0 10px;
+  }
+}

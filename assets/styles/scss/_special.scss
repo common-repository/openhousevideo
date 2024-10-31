@@ -1,0 +1,16 @@
+// ==================================================================
+// Special
+// ==================================================================
+.#{$prefix}display-none {
+  display: none !important;
+}
+.#{$prefix}clearfix {
+  &:after {
+    clear: both;
+  }
+  &:after,
+  &:before {
+    content: " ";
+    display: table;
+  }
+}
